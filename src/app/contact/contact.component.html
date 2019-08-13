@@ -1,0 +1,41 @@
+<div *ngIf="contacts.length > 0">
+  <h2 class="border-bottom border-gray pb-2 mb-0">
+    All Contacts:
+  </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.lastName }}</td>
+        <td>{{ contact.phoneNumber }}</td>
+        <td>{{ contact.email }}</td>
+        <td>
+          <button (click)="deleteUser(contact.id)" class="btn btn-danger">
+            Delete
+          </button>
+          <button (click)="updateContact(contact.id)" class="btn btn-primary">
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="contacts.length == 0">
+  <h2>No contacts added yet!</h2>
+  <button
+    class="btn btn-success"
+    routerLink="/add-contact"
+    routerLinkActive="active-link"
+    >Add a new contact</button
+  >
+</div>

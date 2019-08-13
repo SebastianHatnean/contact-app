@@ -1,0 +1,13 @@
+﻿<h1>Hello, {{ currentUser.firstName }}!</h1>
+<p>Welcome to this awesome application!!</p>
+
+<div class="col-12 col-sm-6 col-lg-6 my-3 p-3 bg-white rounded shadow-sm">
+  <h6 class="border-bottom border-gray pb-2 mb-0">Registered users:</h6>
+  <div class="media text-muted pt-3" *ngFor="let user of users">
+    <p class="media-body pb-3 mb-0 small lh-125 border-gray">
+      <strong class="d-block text-gray-dark">Details:</strong>
+      Username: {{ user.username }} <br />
+      Firstname: {{ user.firstName }}
+    </p>
+  </div>
+</div>
